@@ -1,21 +1,52 @@
 ///Business Logic
 
+//Holds array of places
+function DestinationHolder () {
+  this.locations = [];
+}
+
+DestinationHolder.prototype.addLocation = function(location) {
+  this.locations.push(location);
+}
+
 // places constructor function
-function Place(location, landmarks, timeOfYear, notes, why, bestFood) {
+function Location(location, landmarks, timeOfYear, notes, why, bestFood, year) {
   this.location = location;
   this.landmarks = landmarks;
   this.timeOfYear = timeOfYear;
   this.notes = notes;
   this.why = why;
   this.bestFood = bestFood;
+  this.year= year;
 }
 
-let places1 = new Place("UP Michigan", "Lake Superior", "Summer", "Lots of great places to camp", "The U-P is BEAUTIFUL!!!", "Bagels from a local food stand");
+let destinationHolder = new DestinationHolder();
+let places1 = new Location("UP Michigan", "Lake Superior", "Summer", "Lots of great places to camp", "The U-P is BEAUTIFUL!!!", "Bagels from a local food stand", "2020");
+let places2 = new Location("Japan", "Kiyomizu Temple", "Spring", "Check out the Cherry Blossoms", "Study Japanese", "Okonomiyaki", "2019");
+let places3 = new Location("Greece", "Lesbos Island", "Summer/Fall", "Increidble views", "Greece has a ton of history and beautiful sights", "Great Feta Cheese!", "2018");
+destinationHolder.addLocation(places1);
+destinationHolder.addLocation(places2);
+destinationHolder.addLocation(places3);
 
-let places2 = new Place("Japan", "Kiyomizu Temple", "Spring", "Check out the Cherry Blossoms", "Study Japanese", "Okonomiyaki");
+console.log(places1);
 
-let places3 = new Place("Greece", "Lesbos Island", "Summer/Fall", "Increidble views", "Greece has a ton of history and beautiful sights", "Great Feta Cheese!");
+//Add new parameter
+//Delete place
+//Add an id
+//Search for a place function
+//Search by date
 
+/*
+Place.protoype.whenTravelled = function (year){
+  if (this.year === "2020"){
+    console.log(places1).year;
+  };
+  // for (let i = 0 ; i<Place.length)
+}
+
+places1.whenTravelled("2020");
+
+*/
 console.log (places1);
 // let places1 = {
 //   location: "UP Michigan",
