@@ -16,6 +16,15 @@ DestinationHolder.prototype.assignId = function() {
   return this.currentId;
 }
 
+DestinationHolder.prototype.findLocation = function(location) {
+  for (let i=0; i< this.locations.length; i++) {
+    if(this.locations[i].location === location) {
+      return this.locations[i];
+    }
+  };
+  return false;
+}
+
 // places constructor function
 function Location(location, landmarks, timeOfYear, notes, why, bestFood, year) {
   this.location = location;
@@ -42,12 +51,12 @@ Location.prototype.AddTimeSpent = function(time) {
 
 places1.AddTimeSpent("5 Days");
 //Add new parameter
-
+console.log(destinationHolder.findLocation("Japan"));
+console.log(destinationHolder.findLocation("Tanzania"));
 
 
 //Delete place
 //Search by date
-
 /*
 Place.protoype.whenTravelled = function (year){
   if (this.year === "2020"){
