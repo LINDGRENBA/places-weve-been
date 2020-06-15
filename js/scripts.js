@@ -25,6 +25,15 @@ DestinationHolder.prototype.findLocation = function(location) {
   return false;
 }
 
+DestinationHolder.prototype.whenTravelled = function (year){
+  for (let i = 0 ; i<this.locations.length;i++ ){
+    if (this.locations[i].year == year) {
+      alert (this.locations[i].location);
+    }
+  };
+  return false;
+  }
+
 // places constructor function
 function Location(location, landmarks, timeOfYear, notes, why, bestFood, year) {
   this.location = location;
@@ -44,72 +53,33 @@ destinationHolder.addLocation(places1);
 destinationHolder.addLocation(places2);
 destinationHolder.addLocation(places3);
 
-console.log(places1);
+
 Location.prototype.AddTimeSpent = function(time) {
   return this.TimeSpent = time; 
 };
 
 places1.AddTimeSpent("5 Days");
-//Add new parameter
-console.log(destinationHolder.findLocation("Japan"));
-console.log(destinationHolder.findLocation("Tanzania"));
-
-
-//Delete place
-//Search by date
-/*
-Place.protoype.whenTravelled = function (year){
-  if (this.year === "2020"){
-    console.log(places1).year;
-  };
-  // for (let i = 0 ; i<Place.length)
-}
-
-places1.whenTravelled("2020");
-
-*/
-console.log (places1);
-// let places1 = {
-//   location: "UP Michigan",
-//   landmarks: "Lake Superior",
-//   timeOfYear:"Summer",
-//   notes:"Lots of great places to camp",
-//   why:"The U-P is BEAUTIFUL!!!",
-//   bestFood: "Bagels from a local food stand"
-// }
-// let places2 = {
-//   location: "Japan",
-//   landmarks: "Kiyomizu Temple",
-//   timeOfYear:"Spring",
-//   notes:"Check out the Cherry Blossoms",
-//   why:"Study Japanese",
-//   bestFood: "Okonomiyaki"
-// }
-// let places3 = {
-//   location: "Greece",
-//   landmarks: "Lesbos Island",
-//   timeOfYear:"Summer/Fall",
-//   notes:"Increidble views",
-//   why:"Greece has a ton of history and beautiful sights",
-//   bestFood: "Great Feta Cheese!"
-// }
 
 
 
 
-
-//User-Interface Logic
-$(document).ready(function() {
-
-});
-
-
-
-// function printObject(destination) {
-//   let output = '';
-//   for (let i=0; i<places.length; i++) {
-//     output += <h2>places.location</h2> + <p>places.landmarks</p> ;
+//  DestinationHolder.prototype.whenTravelled = function (year){
+//    for (let i = 0 ; i<this.locations.length;i++ ){
+//      if (this.locations[i].year == year) {
+//        alert (this.locations[i]);
+//     }
+//   };
+//   return false;
 //   }
   
-// }
+  // DestinationHolder.prototype.findLocation = function(location) {
+  //   for (let i=0; i< this.locations.length; i++) {
+  //     if(this.locations[i].location === location) {
+  //       return this.locations[i];
+  //     }
+  //   };
+  //   return false;
+  // }
+  destinationHolder.whenTravelled("2018");
+
 
