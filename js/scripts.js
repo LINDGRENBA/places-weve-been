@@ -36,11 +36,16 @@ destinationHolder.addLocation(places2);
 destinationHolder.addLocation(places3);
 
 console.log(places1);
+Location.prototype.AddTimeSpent = function(time) {
+  return this.TimeSpent = time; 
+};
 
+places1.AddTimeSpent("5 Days");
 //Add new parameter
+
+
+
 //Delete place
-//Add an id
-//Search for a place function
 //Search by date
 
 /*
