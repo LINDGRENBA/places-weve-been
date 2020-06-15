@@ -3,10 +3,17 @@
 //Holds array of places
 function DestinationHolder () {
   this.locations = [];
+  this.currentId = 0;
 }
 
 DestinationHolder.prototype.addLocation = function(location) {
+  location.id = this.assignId();
   this.locations.push(location);
+}
+
+DestinationHolder.prototype.assignId = function() {
+  this.currentId +=1;
+  return this.currentId;
 }
 
 // places constructor function
